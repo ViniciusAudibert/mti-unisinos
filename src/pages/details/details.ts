@@ -5,10 +5,7 @@ import {
   GoogleMaps,
   GoogleMap,
   GoogleMapsEvent,
-  GoogleMapOptions,
-  CameraPosition,
-  MarkerOptions,
-  Marker
+  GoogleMapOptions
 } from '@ionic-native/google-maps';
 
 import { Product } from '../../classes/Product'
@@ -41,6 +38,10 @@ export class DetailsPage {
     this.loadMap();
   }
 
+  ionViewWillLeave() {
+    if (this.map) this.map.destroy()
+  }
+
   loadMap() {
     this.mapElement = document.getElementById('map');
 
@@ -50,7 +51,7 @@ export class DetailsPage {
           lat: this.product.machine.lat,
           lng: this.product.machine.lon
         },
-        zoom: 18,
+        zoom: 15,
         tilt: 30
       }
     };
@@ -61,7 +62,7 @@ export class DetailsPage {
       .then(() => {
         this.map.addMarker({
           title: 'Ionic',
-          icon: 'blue',
+          icon: 'green',
           animation: 'DROP',
           position: {
             lat: this.product.machine.lat,
@@ -70,9 +71,7 @@ export class DetailsPage {
         })
           .then(marker => {
             marker.on(GoogleMapsEvent.MARKER_CLICK)
-              .subscribe(() => {
-                alert('clicked');
-              });
+              .subscribe(() => { });
           });
 
       });

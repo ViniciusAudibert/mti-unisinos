@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { MyApp } from './app.component';
+import { Keyboard } from '@ionic-native/keyboard';
 
 import { AboutPage } from '../pages/about/about';
 import { DetailsPage } from '../pages/details/details';
@@ -44,6 +45,7 @@ import { ProductService } from '../services/product/product.service'
     StatusBar,
     SplashScreen,
     GoogleMaps,
+    Keyboard,
     ProductService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

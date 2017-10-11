@@ -1,19 +1,21 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Encontrar Produto
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Encontrar Produto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <ion-content>
-    <ion-searchbar (ionInput)="filterProducts($event)"></ion-searchbar>
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Digite aqui o produto desejado" (ionInput)="filterProducts($event)" (search)="dismissKeyboard()"></ion-searchbar>
+  </ion-toolbar>
 
-    <ion-list>
-      <ion-item-divider color="light">Pesquisas Recentes</ion-item-divider>
-        <button ion-item *ngFor="let product of products" (click)="productDetails(product)">
+  <ion-list>
+    <ion-item-divider color="light" class="search__title">Pesquisas Recentes</ion-item-divider>
+    <button ion-item *ngFor="let product of products" (click)="productDetails(product)">
           {{ product.description }}
         </button>
-    </ion-list>
+  </ion-list>
 
-  </ion-content>
+</ion-content>

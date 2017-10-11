@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Keyboard } from '@ionic-native/keyboard';
 
 import { Product } from '../../classes/Product'
 import { ProductService } from '../../services/product/product.service'
@@ -15,6 +16,7 @@ export class SearchPage {
   products: Product[]
 
   constructor(
+    private keyboard: Keyboard,
     private productService: ProductService,
     public navCtrl: NavController) {
     this.getProducts()
@@ -35,8 +37,12 @@ export class SearchPage {
     this.resetProducts()
 
     if (value && value.trim() != '') {
-      this.products = this.safeProducts.filter(product => product.description.toLowerCase().indexOf(value.toLowerCase()) > -1)
+      this.products = this.safeProducts.filter(product => product.description.toLowerCase().includes(value.toLowerCase()))
     }
+  }
+
+  dismissKeyboard() {
+    this.keyboard.close()
   }
 
   private getProducts() {

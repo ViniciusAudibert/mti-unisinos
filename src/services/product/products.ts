@@ -5,7 +5,7 @@ const MACHINE_ONE: Machine = {
   id: 1,
   description: 'Phmande 1000',
   local: 'Panquecas do Alemão',
-  urlImage: '/assets/products/maquina01.jpg',
+  urlImage: 'assets/products/maquina01.jpg',
   lat: -29.795004,
   lon: -51.152100
 }
