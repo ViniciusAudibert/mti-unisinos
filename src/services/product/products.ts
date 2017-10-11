@@ -1,43 +1,75 @@
-export const PRODUCTS =
+import { Product } from '../../classes/Product'
+import { Machine } from '../../classes/Machine'
+
+const MACHINE_ONE: Machine = {
+  id: 1,
+  description: 'Phmande 1000',
+  local: 'Panquecas do Alemão',
+  urlImage: '/assets/products/maquina01.jpg',
+  lon: -29.795004,
+  lat: -51.152100
+}
+
+export const PRODUCTS: Product[] =
     [
         {
             id: 1,
-            descricao: 'Coca-Cola 350ml'
-        },
-        {
+            description: 'Coca-Cola 350ml',
+            machine: MACHINE_ONE,
+            quantity: 10
+          },
+          {
             id: 2,
-            descricao: 'Água de Coco 100ml'
-        },
-        {
+            description: 'Água de Coco 100ml',
+            machine: MACHINE_ONE,
+            quantity: 2
+          },
+          {
             id: 3,
-            descricao: 'Toddynho 100ml'
-        },
-        {
+            description: 'Toddynho 100ml',
+            machine: MACHINE_ONE,
+            quantity: 10
+          },
+          {
             id: 4,
-            descricao: 'Red Bull 275ml'
-        },
-        {
+            description: 'Red Bull 275ml',
+            machine: MACHINE_ONE,
+            quantity: 6
+          },
+          {
             id: 5,
-            descricao: 'Água 500ml s/ Gás'
-        },
-        {
+            description: 'Água 500ml s/ Gás',
+            machine: MACHINE_ONE,
+            quantity: 10
+          },
+          {
             id: 6,
-            descricao: 'Cappucino 100ml'
-        },
-        {
+            description: 'Cappucino 100ml',
+            machine: MACHINE_ONE,
+            quantity: 0
+          },
+          {
             id: 7,
-            descricao: 'Café Extra Forte 100ml'
-        },
-        {
+            description: 'Café Extra Forte 100ml',
+            machine: MACHINE_ONE,
+            quantity: 0
+          },
+          {
             id: 8,
-            descricao: 'Água 500ml c/ Gás'
-        },
-        {
+            description: 'Água 500ml c/ Gás',
+            machine: MACHINE_ONE,
+            quantity: 10
+          },
+          {
             id: 9,
-            descricao: 'Brahama 1L'
-        },
-        {
+            description: 'Brahama 1L',
+            machine: MACHINE_ONE,
+            quantity: 4
+          },
+          {
             id: 10,
-            descricao: 'Chocolate 5 Stars 25g'
-        },
-    ]
+            description: 'Chocolate 5 Stars 25g',
+            machine: MACHINE_ONE,
+            quantity: 21
+          },
+        ]

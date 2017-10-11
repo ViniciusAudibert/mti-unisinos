@@ -1,4 +1,8 @@
+import { Machine } from './Machine'
+
 export class Product {
-    id: number;
-    descricao: string;
+  id: number;
+  description: string;
+  quantity: number;
+  machine: Machine;
 }

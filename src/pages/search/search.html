@@ -5,16 +5,15 @@
       </ion-title>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content>
-    <ion-searchbar (ionInput)="getProducts($event)"></ion-searchbar>
+    <ion-searchbar (ionInput)="filterProducts($event)"></ion-searchbar>
 
     <ion-list>
       <ion-item-divider color="light">Pesquisas Recentes</ion-item-divider>
-        <button ion-item *ngFor="let product of products; trackBy: index;" (click)="productDetails(product)">
-          {{ product.descricao }}
-        </button>  
+        <button ion-item *ngFor="let product of products" (click)="productDetails(product)">
+          {{ product.description }}
+        </button>
     </ion-list>
 
   </ion-content>
-  

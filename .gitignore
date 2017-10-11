@@ -3,3 +3,6 @@ temp/
 *.DS_Store
 *.log
 *.swp
+platforms/
+plugins/
+www/
