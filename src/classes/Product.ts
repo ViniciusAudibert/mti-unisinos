@@ -4,5 +4,5 @@ export class Product {
   id: number;
   description: string;
   quantity: number;
-  machine: Machine;
+  listMachine: Machine[];
 }

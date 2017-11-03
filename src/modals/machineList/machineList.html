@@ -1,0 +1,36 @@
+<div id="modal-machine-list">
+
+  <ion-header>
+    <ion-navbar color="dark">
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">Fechar</button>
+      </ion-buttons>
+      <ion-title>
+        {{ getPageTitle() }}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-toolbar>
+      <ion-searchbar placeholder="Digite aqui o modelo da máquina" (ionInput)="filterMachine($event)" (search)="dismissKeyboard()"></ion-searchbar>
+    </ion-toolbar>
+
+    <ion-card *ngFor="let machine of machines" (click)="openProductDetails(machine)">
+      <div class="machineCard__imgContent">
+        <img [src]="machine.urlImage" class="machineCard__imgContent--image" />
+      </div>
+      <ion-card-content>
+        <ion-card-title>
+          {{ machine.description }}
+        </ion-card-title>
+        <p>
+          Local: {{ machine.local }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+
+  </ion-content>
+
+</div>
