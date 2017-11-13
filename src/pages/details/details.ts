@@ -8,7 +8,6 @@ import {
   GoogleMapOptions
 } from '@ionic-native/google-maps'
 
-import { Product } from '../../classes/Product'
 import { Machine } from '../../classes/Machine'
 
 @Component({
@@ -16,7 +15,6 @@ import { Machine } from '../../classes/Machine'
   templateUrl: 'details.html'
 })
 export class DetailsPage {
-  public product: Product
   public machine: Machine
   private map: GoogleMap
   private mapElement: HTMLElement
@@ -25,7 +23,6 @@ export class DetailsPage {
     private googleMaps: GoogleMaps,
     public navCtrl: NavController,
     public navParams: NavParams) {
-    this.product = navParams.get("product")
     this.machine = navParams.get("machine")
   }
 

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="dark">
     <ion-title>
-      {{ product.description }}
+      Em qual máquina?
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,19 +11,12 @@
     <ion-searchbar placeholder="Digite aqui o modelo da máquina" (ionInput)="filterMachine($event)" (search)="dismissKeyboard()"></ion-searchbar>
   </ion-toolbar>
 
-  <ion-card *ngFor="let machine of machines; let i = index" (click)="openProductDetails(i)">
-    <div class="machineCard__imgContent">
-      <img [src]="machine.urlImage" class="machineCard__imgContent--image" />
-    </div>
-    <ion-card-content>
-      <ion-card-title>
-        {{ machine.description }}
-      </ion-card-title>
-      <p>
-        Local: {{ machine.local }}
-      </p>
-    </ion-card-content>
-  </ion-card>
-
+  <ion-list>
+    <ion-item-divider color="light" class="search__title">Pesquisas Recentes</ion-item-divider>
+    <ion-item ion-item *ngFor="let machine of machines">
+      <button ion-button color="light" style="float: right;" (click)="machineDetail(machine)"> Ver localização</button>
+      <div style="padding-top: 10px" (click)="greet()">{{ machine.description }}</div>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

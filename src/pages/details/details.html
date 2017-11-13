@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="dark">
     <ion-title>
-      Detalhes
+      Detalhes da máquina
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,11 +11,8 @@
 
     <section class="details__info">
       <div class="details__info--col1">
-        <h1 class="details__info--title">{{ product.description }}</h1>
         <p class="details__info--enfase">Máquina <strong>{{ machine.description }}</strong></p>
         <p class="details__info--enfase">Perto de <strong>{{ machine.local }}</strong></p>
-        <p *ngIf="!!product.quantity" class="details__info--enfase">Quantidade <strong>{{ product.quantity }}</strong></p>
-        <p *ngIf="!product.quantity" class="details__info--enfase"><strong>ESGOTADO</strong></p>
       </div>
       <div class="details__info--col2">
         <img class="details__info--imageProduct" [src]="machine.urlImage">

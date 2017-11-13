@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="dark">
     <ion-title>
-      Encontrar Produto
+      Qual Produto?
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,9 +13,9 @@
 
   <ion-list>
     <ion-item-divider color="light" class="search__title">Pesquisas Recentes</ion-item-divider>
-    <button ion-item *ngFor="let product of products" (click)="productDetails(product)">
+    <button ion-item *ngFor="let product of products" (click)="machineSelection(product)">
           {{ product.description }}
-        </button>
+    </button>
   </ion-list>
 
 </ion-content>
