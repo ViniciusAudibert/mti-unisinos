@@ -19,6 +19,8 @@ const MACHINE_TWO: Machine = {
   lon: -51.154693,
 }
 
+export const MACHINES: Machine[] = [MACHINE_ONE, MACHINE_TWO]
+
 export const PRODUCTS: Product[] =
   [
     {

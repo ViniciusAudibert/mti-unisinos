@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product/product.service'
 import { ModalService } from '../../services/modal/modal.service'
 
 import { DetailsPage } from '../details/details'
+import { MachineListPage } from '../machineList/machineList'
 
 import { Product } from '../../classes/Product'
 import { Machine } from '../../classes/Machine'
@@ -33,6 +34,10 @@ export class SearchPage {
       if (product.listMachine.length === 1) this.openDetails(product, product.listMachine[0])
       else this.openModalListMachine(product)
     }
+  }
+
+  public machineSelection() {
+    this.navCtrl.push(MachineListPage, {})
   }
 
   public filterProducts(event: any) {

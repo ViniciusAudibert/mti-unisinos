@@ -16,6 +16,7 @@ import { SearchPage } from '../pages/search/search';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductService } from '../services/product/product.service'
+import { MachineService } from '../services/product/machine.service'
 import { ModalService } from '../services/modal/modal.service'
 
 import { MachineListModalModule } from '../modals/machineList/machineList.module'
@@ -53,6 +54,7 @@ import { MachineListModalModule } from '../modals/machineList/machineList.module
     GoogleMaps,
     Keyboard,
     ProductService,
+    MachineService,
     ModalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

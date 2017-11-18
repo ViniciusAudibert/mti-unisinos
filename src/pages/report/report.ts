@@ -6,6 +6,9 @@ import { ReportOptions } from '../../constants/ReportOptions'
 
 import { ModalService } from '../../services/modal/modal.service'
 
+import { SearchPage } from '../search/search'
+import { MachineListPage } from '../machineList/machineList'
+
 @Component({
   selector: 'page-report',
   templateUrl: 'report.html'
@@ -26,16 +29,17 @@ export class ReportPage {
 
   }
 
+  ionViewDidEnter() { this.selectedValueOption = "" }
+
   public sendReport() {
     if (this.isFieldOther() && !this.textOutro) {
       alert('Por favor, preencha o campo "Outro"')
+    } else if (this.isFieldProduct()) {
+      this.navCtrl.push(SearchPage, {})
+    } else {
+      this.navCtrl.push(MachineListPage, {})
     }
-
-    alert('Obrigado pela sua colaboração!')
-
-    this.navCtrl.parent.select(0)
   }
-
 
   public openModal() {
     this.modalService.openMachineList('Teste', [], () => 1)
@@ -43,5 +47,9 @@ export class ReportPage {
 
   public isFieldOther(): boolean {
     return this.selectedValueOption === 'OUTRO'
+  }
+
+  public isFieldProduct(): boolean {
+    return this.selectedValueOption === 'SEM_PRODUTO'
   }
 }
