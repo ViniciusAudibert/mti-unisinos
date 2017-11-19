@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { MACHINES } from './products';
+import { MACHINES } from '../product/products';
 import { Machine } from '../../classes/Machine';
 
 @Injectable()

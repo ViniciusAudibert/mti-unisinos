@@ -5,21 +5,24 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { MyApp } from './app.component';
 import { Keyboard } from '@ionic-native/keyboard';
 
+import { SearchComponent } from '../components/search/search';
+
 import { AboutPage } from '../pages/about/about';
 import { ReportPage } from '../pages/report/report';
 import { DetailsPage } from '../pages/details/details';
 import { HomePage } from '../pages/home/home';
 import { MachineListPage } from '../pages/machineList/machineList';
 import { TabsPage } from '../pages/tabs/tabs';
-import { SearchPage } from '../pages/search/search';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductService } from '../services/product/product.service'
-import { MachineService } from '../services/product/machine.service'
+import { MachineService } from '../services/machine/machine.service'
 import { ModalService } from '../services/modal/modal.service'
 
 import { MachineListModalModule } from '../modals/machineList/machineList.module'
+import { ProductListModalModule } from '../modals/productList/productList.module'
+
 
 @NgModule({
   declarations: [
@@ -30,12 +33,13 @@ import { MachineListModalModule } from '../modals/machineList/machineList.module
     HomePage,
     MachineListPage,
     TabsPage,
-    SearchPage,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     MachineListModalModule,
+    ProductListModalModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +50,7 @@ import { MachineListModalModule } from '../modals/machineList/machineList.module
     HomePage,
     MachineListPage,
     TabsPage,
-    SearchPage,
+    SearchComponent,
   ],
   providers: [
     StatusBar,

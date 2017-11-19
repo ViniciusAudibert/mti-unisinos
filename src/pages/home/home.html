@@ -1,12 +1,11 @@
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title>Home</ion-title>
+    <ion-title>O que você procura?</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Olá!</h2>
-  <p>
-    Aqui você manda.
-  </p>
+<ion-content>
+    <component-search
+      (onItemClick)="callbackSelectProduct($event)"
+    ></component-search>
 </ion-content>

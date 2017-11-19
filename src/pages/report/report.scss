@@ -1,5 +1,9 @@
 page-report {
+  height: 100%;
   .report__send {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
     padding: 0 20px;
   }
 }

@@ -1,0 +1,10 @@
+<ion-toolbar>
+  <ion-searchbar placeholder="Digite aqui o produto desejado" (ionInput)="filterProducts($event)" (search)="dismissKeyboard()"></ion-searchbar>
+</ion-toolbar>
+
+<ion-list>
+  <ion-item-divider color="light" class="search__title">Pesquisas Recentes</ion-item-divider>
+  <button ion-item *ngFor="let product of products" (click)="itemClick(product)">
+    {{ product.description }}
+  </button>
+</ion-list>

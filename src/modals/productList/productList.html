@@ -1,0 +1,28 @@
+<div id="modal-product-list">
+
+  <ion-header>
+    <ion-navbar color="dark">
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">Fechar</button>
+      </ion-buttons>
+      <ion-title>
+        {{ getPageTitle() }}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-toolbar>
+      <ion-searchbar placeholder="Digite aqui o produto desejado" (ionInput)="filterProducts($event)" (search)="dismissKeyboard()"></ion-searchbar>
+    </ion-toolbar>
+
+    <ion-list>
+      <ion-item-divider color="light" class="search__title">Pesquisas Recentes</ion-item-divider>
+      <button ion-item *ngFor="let product of products" (click)="itemClick(product)">
+        {{ product.description }}
+      </button>
+    </ion-list>
+
+  </ion-content>
+
+</div>

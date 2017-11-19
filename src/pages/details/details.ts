@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { NavController, NavParams } from 'ionic-angular'
 
+import { Product } from '../../classes/Product'
+
 import {
   GoogleMaps,
   GoogleMap,
@@ -17,12 +19,14 @@ import { Machine } from '../../classes/Machine'
 export class DetailsPage {
   public machine: Machine
   private map: GoogleMap
+  public product: Product
   private mapElement: HTMLElement
 
   constructor(
     private googleMaps: GoogleMaps,
     public navCtrl: NavController,
     public navParams: NavParams) {
+      this.product = navParams.get("product")
     this.machine = navParams.get("machine")
   }
 
