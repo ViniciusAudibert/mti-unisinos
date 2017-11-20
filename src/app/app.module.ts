@@ -13,12 +13,14 @@ import { DetailsPage } from '../pages/details/details';
 import { HomePage } from '../pages/home/home';
 import { MachineListPage } from '../pages/machineList/machineList';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AdminPage } from '../pages/admin/admin';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProductService } from '../services/product/product.service'
 import { MachineService } from '../services/machine/machine.service'
 import { ModalService } from '../services/modal/modal.service'
+import { ReportService } from '../services/report/report.service'
 
 import { MachineListModalModule } from '../modals/machineList/machineList.module'
 import { ProductListModalModule } from '../modals/productList/productList.module'
@@ -34,6 +36,7 @@ import { ProductListModalModule } from '../modals/productList/productList.module
     MachineListPage,
     TabsPage,
     SearchComponent,
+    AdminPage
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { ProductListModalModule } from '../modals/productList/productList.module
     MachineListPage,
     TabsPage,
     SearchComponent,
+    AdminPage
   ],
   providers: [
     StatusBar,
@@ -60,6 +64,7 @@ import { ProductListModalModule } from '../modals/productList/productList.module
     ProductService,
     MachineService,
     ModalService,
+    ReportService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
