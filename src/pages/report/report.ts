@@ -6,12 +6,14 @@ import { ReportOptions } from '../../constants/ReportOptions'
 
 import { ModalService } from '../../services/modal/modal.service'
 import { MachineService } from '../../services/machine/machine.service'
-
+import { ReportService } from '../../services/report/report.service'
 
 import { MachineListPage } from '../machineList/machineList'
+import { AdminPage } from '../admin/admin'
 
 import { Product } from '../../classes/Product'
 import { Machine } from '../../classes/Machine'
+import { Report } from '../../classes/Report'
 
 @Component({
   selector: 'page-report',
@@ -28,6 +30,7 @@ export class ReportPage {
   constructor(
     public modalService: ModalService,
     public machineService: MachineService,
+    public reportService: ReportService,
     public navCtrl: NavController) {
     this.reportOptions = new ReportOptions().toArray()
   }
@@ -94,9 +97,14 @@ export class ReportPage {
     } else if (this.hasToOpenProductModal()) {
       this.openModalListProduct()
     } else {
-      // TODO: salvar os dados do report
+      this.reportService.add(this.description(), this.selectedMachine, this.selectedProduct)
       alert("Obrigado pela sua colaboração!")
     }
+  }
+
+  private description(): String {
+    if(this.isFieldOther()) return this.textOutro
+    else return this.selectedValueOption
   }
 
   private hasToOpenProductModal(): boolean {

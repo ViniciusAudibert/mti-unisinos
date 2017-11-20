@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Histórico
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let report of reports;">
+
+    <ion-card-content>
+      <p *ngIf="report.description == 'SEM_TROCO'" >Faltando troco <ion-badge>{{report.quantity}}</ion-badge></p>
+      <p *ngIf="report.description == 'SEM_PRODUTO'" >Faltou o produto {{report.product.description}} <ion-badge>{{report.quantity}}</ion-badge></p>
+      <p *ngIf="report.description == 'DESLIGADA'" >Desligada <ion-badge>{{report.quantity}}</ion-badge></p>
+      <p *ngIf="report.description == 'NAO_DEVOLVEU_TROCO'" >Não Devolveu o Troco <ion-badge>{{report.quantity}}</ion-badge></p>
+      <p *ngIf="report.description == 'NAO_ENTREGOU_O_PRODUTO'" >Não Entregou o Produto <ion-badge>{{report.quantity}}</ion-badge></p>
+      <p *ngIf="report.description != 'SEM_TROCO' && report.description != 'SEM_PRODUTO' && report.description != 'DESLIGADA' && report.description != 'NAO_DEVOLVEU_TROCO' && report.description != 'NAO_ENTREGOU_O_PRODUTO'" >{{report.description}} <ion-badge>{{report.quantity}}</ion-badge></p>
+
+      <br>
+      <ion-row>
+        <ion-col left left-right *ngIf="!report.resolved">
+          <button ion-button color="light" small (click)="fix(report)">Corrigir</button>
+        </ion-col>
+        <ion-col left left-right *ngIf="report.resolved">
+          <p>Resolvido pelo administrador.</p>
+        </ion-col>
+        <ion-col style="padding-top: 17px" right text-right text-bottom>
+          <ion-note>{{report.date | date: 'dd/MM/yyyy'}}</ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
